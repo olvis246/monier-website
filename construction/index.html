@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monier Construction Company — Port Harcourt, Nigeria</title>
+<meta name="description" content="Monier Construction Company (Nigeria) Limited — civil engineering, infrastructure and renovation contractors based in Port Harcourt, Rivers State.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0e0c;
+  --concrete:#3a3733;
+  --concrete-mid:#7a756e;
+  --concrete-light:#d4cfc6;
+  --paper:#f2ede4;
+  --amber:#d95f1a;
+  --amber-light:#f07228;
+  --line:rgba(15,14,12,0.12);
+  --line-dark:rgba(242,237,228,0.14);
+  --maxw:1200px;
+  --fd:'Oswald',sans-serif;
+  --fb:'Work Sans',sans-serif;
+  --fm:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);overflow-x:hidden;font-size:16px;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;line-height:1.08;letter-spacing:0.01em;text-transform:uppercase;}
+.eyebrow{font-family:var(--fm);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--amber);flex-shrink:0;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:14px 28px;cursor:pointer;border:2px solid;position:relative;overflow:hidden;transition:color .3s ease;}
+.btn::after{content:"";position:absolute;inset:0;transform:translateX(-101%);transition:transform .35s cubic-bezier(.6,0,.4,1);z-index:0;}
+.btn span{position:relative;z-index:1;}
+.btn:hover::after{transform:translateX(0);}
+.btn-dark{border-color:var(--ink);color:var(--ink);}
+.btn-dark::after{background:var(--ink);}
+.btn-dark:hover{color:var(--paper);}
+.btn-filled{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+.btn-filled::after{background:var(--amber);}
+.btn-filled:hover{color:var(--paper);}
+.btn-ol{border-color:rgba(242,237,228,0.5);color:var(--paper);}
+.btn-ol::after{background:var(--paper);}
+.btn-ol:hover{color:var(--ink);}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1);}
+.rv.on{opacity:1;transform:none;}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1);}
+.rvl.on{opacity:1;transform:none;}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0;transition:background .4s,padding .4s;border-bottom:1px solid transparent;}
+#nav.scrolled{background:rgba(10,9,8,0.95);backdrop-filter:blur(8px);padding:13px 0;border-color:var(--line-dark);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:0.08em;text-transform:uppercase;color:#fff;line-height:1;}
+.nav-logo small{display:block;font-family:var(--fm);font-size:9px;letter-spacing:0.18em;color:var(--amber);margin-top:4px;font-weight:400;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-family:var(--fm);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(242,237,228,0.8);position:relative;padding-bottom:2px;transition:color .25s;}
+.nav-links a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--amber-light);transition:width .3s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a:hover::after{width:100%;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:22px;height:2px;background:#fff;transition:.3s;}
+.drawer{position:fixed;inset:0;background:var(--ink);z-index:998;display:flex;flex-direction:column;justify-content:center;padding:48px 40px;transform:translateX(100%);transition:transform .5s cubic-bezier(.6,0,.4,1);}
+.drawer.open{transform:none;}
+.drawer a{font-family:var(--fd);font-size:36px;font-weight:700;text-transform:uppercase;color:#fff;display:block;padding:14px 0;border-bottom:1px solid var(--line-dark);transition:color .25s;}
+.drawer a:hover{color:var(--amber);}
+.drawer-x{position:absolute;top:28px;right:32px;font-size:28px;color:#fff;cursor:pointer;background:none;border:none;}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--ink);}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,9,8,0.5) 0%,rgba(10,9,8,0.4) 40%,rgba(10,9,8,0.88) 100%),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&auto=format&fit=crop') center/cover no-repeat;will-change:transform;}
+.hero-body{position:relative;z-index:2;padding:180px 32px 0;max-width:var(--maxw);margin:0 auto;width:100%;}
+.hero-tag{font-family:var(--fm);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber-light);display:flex;align-items:center;gap:12px;margin-bottom:22px;opacity:0;animation:fu .7s .2s ease forwards;}
+.hero-tag::before{content:"";width:24px;height:1.5px;background:var(--amber-light);}
+h1.hero-h1{font-size:clamp(44px,7.5vw,100px);font-weight:700;color:#fff;letter-spacing:0.02em;max-width:900px;opacity:0;animation:fu .9s .4s ease forwards;}
+.hero-sub{font-size:17px;color:var(--concrete-light);max-width:520px;margin:24px 0 40px;opacity:0;animation:fu .7s .7s ease forwards;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fu .7s .9s ease forwards;}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+.stats-bar{position:relative;z-index:2;border-top:1px solid var(--line-dark);background:rgba(15,14,12,0.7);backdrop-filter:blur(6px);}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+.stat-box{padding:28px 0;border-right:1px solid var(--line-dark);}
+.stat-box:last-child{border-right:none;}
+.stat-num{font-family:var(--fd);font-size:clamp(26px,3vw,42px);font-weight:700;color:#fff;line-height:1;display:flex;align-items:baseline;gap:4px;}
+.stat-num .sfx{font-size:0.5em;color:var(--amber-light);}
+.stat-lbl{font-family:var(--fm);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--concrete-light);margin-top:6px;}
+/* TICKER */
+.ticker{background:var(--amber);padding:12px 0;overflow:hidden;}
+.ticker-track{display:flex;width:max-content;animation:tick 28s linear infinite;}
+.ticker:hover .ticker-track{animation-play-state:paused;}
+.ticker-track span{font-family:var(--fm);font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;padding:0 24px;white-space:nowrap;}
+.ticker-track span::after{content:" ◆";opacity:0.6;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+/* ABOUT */
+.about-section{padding:120px 0;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-img-col{position:relative;padding-bottom:30px;}
+.about-img-main{width:100%;aspect-ratio:3/4;background:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80&auto=format&fit=crop') center/cover no-repeat;}
+.about-accent{position:absolute;bottom:0;right:-20px;background:var(--amber);padding:24px 26px;color:#fff;}
+.about-accent .big{font-family:var(--fd);font-size:40px;font-weight:700;line-height:1;display:block;}
+.about-accent .lbl{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-top:6px;opacity:0.9;}
+.about-text h2{font-size:clamp(30px,3.8vw,50px);margin-bottom:22px;}
+.about-text p{color:var(--concrete);font-size:16px;margin-bottom:14px;}
+/* SERVICES */
+.svc-section{background:var(--ink);color:var(--paper);padding:120px 0;}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
+.svc-head p{max-width:300px;color:var(--concrete-light);font-size:15px;}
+.svc-list{border-top:1px solid var(--line-dark);}
+.svc-row{display:grid;grid-template-columns:56px 1fr 36px;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line-dark);position:relative;overflow:hidden;}
+.svc-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--amber);transition:width .4s cubic-bezier(.6,0,.4,1);z-index:0;}
+.svc-row:hover::before{width:100%;}
+.svc-row > *{position:relative;z-index:1;}
+.svc-n{font-family:var(--fm);font-size:12px;color:rgba(242,237,228,0.3);transition:color .35s;}
+.svc-name{font-family:var(--fd);font-size:clamp(18px,2.4vw,28px);font-weight:600;text-transform:uppercase;color:var(--paper);transition:transform .35s;}
+.svc-row:hover .svc-name{transform:translateX(8px);}
+.svc-arr{color:rgba(242,237,228,0.2);font-size:20px;transition:color .35s,transform .35s;transform:translateX(-6px);}
+.svc-row:hover .svc-arr{color:#fff;transform:none;}
+/* WHY */
+.why-section{padding:120px 0;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.why-left h2{font-size:clamp(30px,3.8vw,48px);}
+.why-left p{color:var(--concrete);font-size:16px;margin-top:18px;}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:8px;}
+.why-card{background:var(--concrete-light);padding:32px 26px;transition:background .3s,color .3s;}
+.why-card:hover{background:var(--ink);color:var(--paper);}
+.why-card:hover p{color:var(--concrete-light);}
+.why-card .ico{font-size:26px;margin-bottom:14px;}
+.why-card h3{font-size:17px;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;}
+.why-card p{font-size:14px;color:var(--concrete);}
+/* PROJECTS */
+.proj-section{padding:100px 0 0;background:var(--ink);}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px;}
+.proj-head h2{color:var(--paper);font-size:clamp(30px,3.8vw,50px);}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.proj-card{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
+.proj-card.on{opacity:1;transform:none;}
+.proj-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .5s ease;filter:grayscale(25%) brightness(0.82);}
+.proj-card:hover .proj-bg{transform:scale(1.07);filter:grayscale(0%) brightness(1);}
+.proj-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.92) 0%,rgba(10,9,8,0) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;}
+.proj-cat{font-family:var(--fm);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-light);margin-bottom:7px;transform:translateY(8px);opacity:0;transition:all .35s ease .05s;}
+.proj-title{font-family:var(--fd);font-size:clamp(16px,1.8vw,22px);color:#fff;text-transform:uppercase;transform:translateY(8px);opacity:0;transition:all .35s ease;}
+.proj-card:hover .proj-cat,.proj-card:hover .proj-title{opacity:1;transform:none;}
+/* REVIEWS */
+.rev-section{background:var(--paper);padding:120px 0;}
+.rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px;}
+.rating-block .big{font-family:var(--fd);font-size:88px;font-weight:700;line-height:1;color:var(--ink);}
+.rating-block .stars{color:var(--amber);font-size:22px;letter-spacing:3px;margin-top:4px;}
+.rating-block .cnt{font-family:var(--fm);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--concrete-mid);margin-top:6px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);}
+.rev-card{background:var(--paper);padding:38px 32px;}
+.rev-stars{color:var(--amber);font-size:16px;letter-spacing:2px;margin-bottom:18px;}
+.rev-card blockquote{font-size:15.5px;color:var(--concrete);line-height:1.65;margin-bottom:24px;font-style:italic;}
+.rev-card .by{font-family:var(--fm);font-size:11px;letter-spacing:0.06em;}
+.rev-card .by strong{display:block;font-family:var(--fb);font-size:15px;font-weight:600;color:var(--ink);font-style:normal;letter-spacing:0;}
+/* CTA */
+.cta-band{background:var(--amber);padding:90px 0;position:relative;overflow:hidden;clip-path:polygon(0 5%,100% 0,100% 95%,0 100%);margin:-2px 0;}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.cta-band h2{font-size:clamp(26px,4vw,50px);color:#fff;max-width:600px;}
+.cta-band .btn{border-color:#fff;color:#fff;}
+.cta-band .btn::after{background:#fff;}
+.cta-band .btn:hover{color:var(--amber);}
+/* CONTACT */
+.contact-section{padding:120px 0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;}
+.contact-info h2{font-size:clamp(26px,3.5vw,44px);margin-bottom:34px;}
+.info-list{display:flex;flex-direction:column;}
+.info-row{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line);}
+.info-row:last-child{border-bottom:1px solid var(--line);}
+.info-key{font-family:var(--fm);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);padding-top:2px;}
+.info-val{font-size:15px;color:var(--concrete);font-weight:500;}
+.map-embed{margin-top:30px;height:220px;overflow:hidden;border:1px solid var(--line);}
+.map-embed iframe{width:100%;height:100%;border:0;filter:grayscale(50%);}
+.form-wrap{background:var(--ink);padding:46px;}
+.form-wrap h3{font-family:var(--fd);font-size:22px;font-weight:700;text-transform:uppercase;margin-bottom:30px;color:var(--paper);}
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
+.field label{font-family:var(--fm);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--concrete-light);}
+.field input,.field textarea{background:transparent;border:none;border-bottom:1px solid var(--line-dark);color:var(--paper);font-family:var(--fb);font-size:15px;padding:10px 0;outline:none;transition:border-color .3s;}
+.field input:focus,.field textarea:focus{border-color:var(--amber-light);}
+.field textarea{resize:vertical;min-height:90px;}
+.form-wrap .btn-filled{width:100%;justify-content:center;margin-top:4px;}
+#formMsg{font-family:var(--fm);font-size:12px;color:var(--amber-light);margin-top:14px;display:none;letter-spacing:0.06em;}
+/* FOOTER */
+footer{background:#0a0908;color:var(--concrete-light);padding:80px 0 0;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid var(--line-dark);}
+.foot-brand{font-family:var(--fd);font-size:26px;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:0.06em;}
+.foot-sub{margin-top:14px;font-size:14px;max-width:270px;line-height:1.6;}
+.foot-social{display:flex;gap:12px;margin-top:26px;}
+.foot-social a{width:38px;height:38px;border:1px solid var(--line-dark);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;color:var(--concrete-light);transition:border-color .3s,background .3s,color .3s;}
+.foot-social a:hover{border-color:var(--amber);background:var(--amber);color:#fff;}
+.fcol h4{font-family:var(--fm);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber-light);margin-bottom:20px;}
+.fcol a,.fcol span{display:block;font-size:14px;color:var(--concrete-light);margin-bottom:10px;transition:color .25s;}
+.fcol a:hover{color:#fff;}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-family:var(--fm);font-size:11px;flex-wrap:wrap;gap:10px;}
+#toTop{position:fixed;bottom:28px;right:28px;width:46px;height:46px;background:var(--amber);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:990;}
+#toTop.show{opacity:1;pointer-events:auto;}
+#toTop:hover{transform:translateY(-4px);}
+@media(max-width:960px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .proj-grid{grid-template-columns:repeat(2,1fr);}
+  .rev-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .form-wrap{padding:30px;}
+  .about-accent{right:0;}
+  .why-cards{margin-top:40px;}
+}
+@media(max-width:560px){
+  .proj-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .stat-box{border-right:none;border-bottom:1px solid var(--line-dark);}
+  .cta-band{clip-path:none;padding:60px 0;}
+}
+</style>
+</head>
+<body>
+
+<header id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-logo">Monier<small>Construction Co. · Nigeria</small></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#svc">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-filled"><span>Get a Quote</span></a>
+    </div>
+    <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <button class="drawer-x" id="dx">&#x2715;</button>
+  <a href="#about">About</a>
+  <a href="#svc">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-bg" id="hbg"></div>
+  <div class="hero-body">
+    <div class="hero-tag">Port Harcourt, Rivers State &middot; Civil &amp; Structural Contractors</div>
+    <h1 class="hero-h1">Shaping Nigeria's<br>Infrastructure.</h1>
+    <p class="hero-sub">From demolition to finishing &mdash; Monier Construction Company delivers civil engineering, structural works, and complete renovation services across Rivers State and beyond.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-filled"><span>Get a Free Quote</span></a>
+      <a href="#projects" class="btn btn-ol"><span>View Our Work</span></a>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-box"><div class="stat-num"><span class="cnt" data-t="500">0</span><span class="sfx">+</span></div><div class="stat-lbl">Projects Delivered</div></div>
+      <div class="stat-box"><div class="stat-num"><span class="cnt" data-t="5000">0</span><span class="sfx">+</span></div><div class="stat-lbl">Workforce</div></div>
+      <div class="stat-box"><div class="stat-num"><span class="cnt" data-t="15">0</span><span class="sfx"> yrs</span></div><div class="stat-lbl">In Operation</div></div>
+      <div class="stat-box"><div class="stat-num">3.9<span class="sfx">&#9733;</span></div><div class="stat-lbl">90 Google Reviews</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Demolition</span><span>Drywall Installation</span><span>Exterior Painting</span><span>Tile Work</span><span>Floor Fitting</span><span>Remodelling</span><span>Interior Decorating</span><span>Plumbing</span><span>Refurbishment</span><span>Gutter Cleaning</span><span>Fan Installation</span><span>TV Mounting</span>
+    <span>Demolition</span><span>Drywall Installation</span><span>Exterior Painting</span><span>Tile Work</span><span>Floor Fitting</span><span>Remodelling</span><span>Interior Decorating</span><span>Plumbing</span><span>Refurbishment</span><span>Gutter Cleaning</span><span>Fan Installation</span><span>TV Mounting</span>
+  </div>
+</div>
+
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-col rvl">
+        <div class="about-img-main"></div>
+        <div class="about-accent"><span class="big">15+</span><span class="lbl">Years Building Nigeria</span></div>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow rv">Who We Are</div>
+        <h2 class="rv">Built in Port Harcourt.<br>Working Across Nigeria.</h2>
+        <p class="rv">Monier Construction Company (Nigeria) Limited is a full-service civil engineering and building contractor headquartered on Ikwerre Road, Port Harcourt. We handle both the heavy work &mdash; structural builds, demolition, and refurbishment &mdash; and the detail end: tiling, plumbing fixtures, drywall, painting, and finishing.</p>
+        <p class="rv">With a workforce in the thousands, our crews run multiple active sites simultaneously without compromising supervision or quality control. That scale lets us take on government infrastructure contracts and private renovation jobs alike.</p>
+        <a href="#svc" class="btn btn-dark rv" style="margin-top:18px;"><span>See Our Services</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section" id="svc">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <div class="eyebrow rv" style="color:var(--amber-light);">What We Do</div>
+        <h2 class="rv" style="color:var(--paper);">Full-Scope Construction.<br>One Contractor.</h2>
+      </div>
+      <p class="rv">Every service delivered by in-house crews &mdash; no outsourced subcontractors passing the job along.</p>
+    </div>
+    <div class="svc-list rv" id="svcList"></div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-left">
+        <div class="eyebrow rv">Why Monier</div>
+        <h2 class="rv">Four Reasons Clients Come Back.</h2>
+        <p class="rv">A 3.9-star average across 90 public Google reviews tells you we are a real, working contractor &mdash; not just a polished pitch deck.</p>
+        <a href="#contact" class="btn btn-dark rv" style="margin-top:28px;"><span>Start a Conversation</span></a>
+      </div>
+      <div class="why-cards rv">
+        <div class="why-card"><div class="ico">&#9889;</div><h3>Scale</h3><p>Thousands on payroll means we staff multiple sites without thinning out supervision. Timelines hold.</p></div>
+        <div class="why-card"><div class="ico">&#x1F3D7;</div><h3>Full Range</h3><p>Demolition to TV mounting &mdash; same company. Fewer handoffs, fewer delays, one point of contact.</p></div>
+        <div class="why-card"><div class="ico">&#x1F4CD;</div><h3>Local Roots</h3><p>Based on Ikwerre Road, Port Harcourt. We know local suppliers, permits, and terrain.</p></div>
+        <div class="why-card"><div class="ico">&#x2705;</div><h3>Track Record</h3><p>90 Google reviews and a visible project history. Our work is verifiable, not just promised.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section" id="projects">
+  <div class="wrap">
+    <div class="proj-head rv">
+      <div>
+        <div class="eyebrow" style="color:var(--amber-light);">Selected Work</div>
+        <h2>A Look at Recent Sites.</h2>
+      </div>
+      <a href="#contact" class="btn btn-ol"><span>Start a Project</span></a>
+    </div>
+  </div>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Infrastructure</span><span class="proj-title">Commercial Shell &amp; Core</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Interiors</span><span class="proj-title">Residential Refurbishment</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Structural</span><span class="proj-title">Industrial Site Works</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Planning</span><span class="proj-title">Site Engineering &amp; Survey</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Finishing</span><span class="proj-title">Exterior Painting Contract</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="proj-ov"><span class="proj-cat">Interiors</span><span class="proj-title">Drywall &amp; Partition Fit-Out</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rev-section" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div class="rating-block rv">
+        <div class="big">3.9</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="cnt">90 Google Reviews &middot; Port Harcourt</div>
+      </div>
+      <p class="rv" style="max-width:320px;color:var(--concrete);font-size:15px;">Real reviews from property developers, landlords, and businesses across Rivers State.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card rv">
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"We brought Monier in to handle both the structural repairs and the tiling on our office block in Trans-Amadi. Having one contractor for both saved us weeks of coordination."</blockquote>
+        <div class="by"><strong>Chidi O.</strong>Property Developer, Port Harcourt</div>
+      </div>
+      <div class="rev-card rv">
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <blockquote>"Solid crew &mdash; showed up on schedule for the demolition and refurbishment phase. Communication could be a bit faster, but the work itself was clean and professional."</blockquote>
+        <div class="by"><strong>Ifeoma A.</strong>Residential Client, GRA</div>
+      </div>
+      <div class="rev-card rv">
+        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Used them for exterior painting and gutter work on a four-unit building. Fair pricing for Port Harcourt and they did not cut corners on surface prep."</blockquote>
+        <div class="by"><strong>Emeka N.</strong>Landlord, Rumuigbo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <h2>Need a Contractor Who<br>Actually Shows Up?</h2>
+    <a href="#contact" class="btn btn-ol"><span>Talk to Us Today</span></a>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow rv">Get In Touch</div>
+        <h2 class="rv">Tell Us About<br>Your Project.</h2>
+        <div class="info-list">
+          <div class="info-row rv"><span class="info-key">Address</span><span class="info-val">Mile 7 Ikwerre Rd, Rumuigbo, Port Harcourt 500272, Rivers State</span></div>
+          <div class="info-row rv"><span class="info-key">Phone</span><span class="info-val">0704 313 9225</span></div>
+          <div class="info-row rv"><span class="info-key">Hours</span><span class="info-val">Open daily &mdash; closes 5:30 pm</span></div>
+        </div>
+        <div class="map-embed rv">
+          <iframe loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Mile+7+Ikwerre+Road+Rumuigbo+Port+Harcourt&output=embed&z=14" title="Monier Construction location"></iframe>
+        </div>
+      </div>
+      <div class="rv">
+        <form class="form-wrap" id="cForm">
+          <h3>Send Us a Message</h3>
+          <div class="field"><label for="fn">Full Name</label><input id="fn" type="text" placeholder="Your name" required></div>
+          <div class="field"><label for="fe">Email</label><input id="fe" type="email" placeholder="you@email.com" required></div>
+          <div class="field"><label for="fp">Phone</label><input id="fp" type="tel" placeholder="080..."></div>
+          <div class="field"><label for="fm2">Project Details</label><textarea id="fm2" placeholder="Tell us what you are building or renovating..." required></textarea></div>
+          <button type="submit" class="btn btn-filled"><span id="fbt">Send Message</span></button>
+          <div id="formMsg">&#x2713; Message received. We will be in touch within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Monier</div>
+        <p class="foot-sub">Civil engineering and building contractors based in Port Harcourt, Rivers State. Structural work and finishing under one roof.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="LinkedIn">In</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Navigate</h4>
+        <a href="#about">About</a><a href="#svc">Services</a><a href="#projects">Projects</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h4>Services</h4>
+        <a href="#svc">Demolition</a><a href="#svc">Remodelling</a><a href="#svc">Tile Work</a><a href="#svc">Drywall</a><a href="#svc">Painting</a>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <span>Mile 7 Ikwerre Rd, Rumuigbo</span><span>Port Harcourt, Rivers State</span><span style="margin-top:6px;">0704 313 9225</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Monier Construction Company (Nigeria) Limited</span>
+      <span style="color:var(--concrete-mid);">Built for clients who need it done right.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">&#x2191;</button>
+
+<script>
+// Services
+const svcs=['Demolition','Drywall Installation & Repair','Exterior Painting','Fan Installation & Repair','Furniture Assembly','Gutter Cleaning','Floor Fitting','Interior Decorating','Plumbing Fixture Installation','Refurbishment & Remodelling','TV Mounting','Tile Work Installation'];
+const sl=document.getElementById('svcList');
+svcs.forEach((s,i)=>{
+  const r=document.createElement('div');
+  r.className='svc-row';
+  r.innerHTML='<span class="svc-n">'+String(i+1).padStart(2,'0')+'</span><span class="svc-name">'+s+'</span><span class="svc-arr">&#x2192;</span>';
+  sl.appendChild(r);
+});
+
+// Nav
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  document.getElementById('toTop').classList.toggle('show',window.scrollY>600);
+},{passive:true});
+
+// Parallax
+const hbg=document.getElementById('hbg');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY<window.innerHeight) hbg.style.transform='translateY('+window.scrollY*.22+'px)';
+},{passive:true});
+
+// Drawer
+const ham=document.getElementById('ham');
+const drawer=document.getElementById('drawer');
+ham.addEventListener('click',()=>drawer.classList.add('open'));
+document.getElementById('dx').addEventListener('click',()=>drawer.classList.remove('open'));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+
+// Reveals
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const sibs=[...e.target.parentElement.querySelectorAll('.rv,.rvl')];
+      const idx=sibs.indexOf(e.target);
+      setTimeout(()=>e.target.classList.add('on'),idx*80);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rv,.rvl').forEach(el=>io.observe(el));
+
+// Project cards
+const pcards=document.querySelectorAll('.proj-card');
+const pio=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const arr=[...pcards];
+      const i=arr.indexOf(e.target);
+      setTimeout(()=>e.target.classList.add('on'),i*100);
+      pio.unobserve(e.target);
+    }
+  });
+},{threshold:0.06});
+pcards.forEach(c=>pio.observe(c));
+
+// Counters
+document.querySelectorAll('.cnt[data-t]').forEach(el=>{
+  const target=+el.dataset.t;
+  const cio=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      const start=performance.now(),dur=1600;
+      function tick(now){
+        const p=Math.min((now-start)/dur,1);
+        const e=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(e*target).toLocaleString();
+        if(p<1) requestAnimationFrame(tick); else el.textContent=target.toLocaleString();
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    }
+  },{threshold:0.5});
+  cio.observe(el);
+});
+
+// Form
+document.getElementById('cForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const b=document.getElementById('fbt'),m=document.getElementById('formMsg');
+  b.textContent='Sending\u2026';
+  setTimeout(()=>{b.textContent='\u2713 Sent';m.style.display='block';this.reset();},900);
+});
+
+// To top
+document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
